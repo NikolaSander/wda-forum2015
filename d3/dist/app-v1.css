@@ -1,0 +1,114 @@
+
+.container {
+  margin: 0 auto;
+  min-width: 500px;
+  max-width: 1000px;
+  background-color: #161617;
+  overflow: hidden;
+}
+
+#timeline {
+  margin: 0 0 0px 0;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+}
+main {
+  position: relative;
+}
+
+.year label {
+  font-size: 15px;
+  font-weight: normal;
+  border: 1px solid #161617;
+  color: #fff;
+  background-color: #565656;
+  padding: 5px 15px 5px 15px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.year input {
+  display: none;
+}
+.year input[checked] + label {
+  color: #fff;
+  background-color: #FF6600;
+}
+
+.year input[checked] + label:hover {
+  color: #fff;
+  background-color: #FF6600;
+}
+
+
+#diagram {
+  text-align: center;
+}
+
+/* ---------------------------------------------------------
+   SVG styles
+   ---------------------------------------------------------*/
+svg {
+  font-size: 16px;
+  font-weight: bold;
+  max-width: 100%;
+  vector-effect: non-scaling-stroke;
+}
+.info, .label {
+  pointer-events: none;
+}
+.info text {
+  fill: white;
+}
+
+#circle circle {
+  fill: none;
+  pointer-events: all;
+}
+text {
+  cursor: default;
+  fill: #fff;
+}
+.group-arc + text {
+  -webkit-transition: opacity 0.4s;
+  -moz-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+.group-arc.animate + text {
+  opacity: 0;
+}
+#circle path {
+  -webkit-transition: opacity 0.4s;
+  -moz-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+#circle:hover path.fade,
+#circle path.unselected {
+  opacity: 0;
+  pointer-events: none;
+}
+text.fade {
+  opacity: 0;
+}
+.group-arc {
+  cursor: pointer;
+}
+text.region {
+  font-family: 'open sans', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+.chord {
+  opacity: 0.85;
+}
+.chord:hover {
+  opacity: 1;
+}
+
+

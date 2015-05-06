@@ -1,0 +1,356 @@
+﻿<!doctype html>
+<!-- to print to pdf, open in Chrome and add ?print-pdf to url -->
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>WDA Forum 2015</title>
+		<meta name="description" content="Quantifizierung und Visualisierung Globaler Migrationsströme">
+		<meta name="author" content="Nikola Sander">
+		
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="css/reveal.min.css">
+		
+		<!-- Selected Style: Nikola -->
+		<link rel="stylesheet" href="css/theme/nikola.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes '?print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );}
+		</script>
+		<!--[if lt IE 9]><script src="lib/js/html5shiv.js"></script><![endif]-->
+
+	  <!-- D3 -->
+		<link href="d3/dist/app-v1.css" rel="stylesheet" media="all">
+		<!--[if lt IE 9]><script src=javascripts/html5shiv-printshiv.js></script><![endif]-->
+		<script src="d3/dist/app-v1.js"></script>
+	  	  
+	 <!-- Twitter colour theme -->
+		<meta name="twitter:widgets:link-color" content="#FF7F00">
+		<meta name="twitter:widgets:theme" content="dark">
+
+	<!--orange color: #ff9a15 -->
+		
+		
+	</head>
+	<body>
+	<div class="reveal">
+		<div class="slides">
+		<!-- SLIDES -->		
+		
+			<section data-background="images/top50-2005-all.png" data-background-size="contain">
+				<div style="background-color: rgba(0, 0, 0, 0.4)">
+				<h4 style="text-align: center; font-size: 125%; font-weight: bold">Quantifizierung und Visualisierung<br> Globaler Migrationsströme</h4>
+				<h5 style="text-align: center;font-size: 110%">Nikola Sander</h5>
+				<h5 style="text-align: center;font-size: 110%">WDA Forum, St.Gallen, Mai 2015</h5>		
+				</div>
+			</section>
+
+			<section>		
+				<h2>Warum gibt es Migration?</h2>
+				<p>Zusammenwirken wirtschaftlicher, politischer und sozialer Faktoren</p>
+				<p>z.B. Chancen am Arbeitsmarkt, politische Stabilität, Meinungsfreiheit</p>
+			</section>		
+			
+			<section data-background="images/human-journey.png" data-background-size="contain">	
+				<div style="background-color: rgba(0, 0, 0, 0.75)">			
+				<h3 style="text-align: center">Migration gab es immer schon!</h3>
+				<p style="text-align: center">z.B. <a href="http://blog.education.nationalgeographic.com/2015/04/24/dna-reveals-undiscovered-ancient-migration-route/" target="_blank">National Geographic Genographic Project</a></p>
+				</div>
+			</section>		
+
+			<section>		
+				<h2>Wie wird Migration definiert?</h2>
+				<p><font color="#ff7f00">Stock:</font> im Ausland geborene Bevölkerung</p>
+				<p><font color="#ff7f00">Flow:</font> Wanderungsströme über einen bestimmten Zeitraum</p>
+				<br>
+				<p>Empfehlung der UNO zur Definition von Wanderungsströmen:</p>
+				<p>"Eine Person die für mindestens ein Jahr in ein anderes Land zieht, so dass das Zielland das neue gewöhnliche Aufenthaltsland ist."</p>
+			</section>				
+
+			<section>		
+				<h2>Wie wird Migration erfasst?</h2>
+				<p><font color="#ff7f00">Stock:</font> in Volkszählungen (Frage nach dem Geburtsland)</p>
+				<p><font color="#ff7f00">Flow:</font> in Bevölkerungsregistern und administrativen Daten</p>
+			</section>			
+
+			<section>		
+				<h2>Die Erfassung von Wanderungsströmen ist sehr schwierig!</h2>
+				<p>Es gibt keine international einheitliche Definition.</p>
+				<p>Erfassung von Migrationsströmen variiert von Land zu Land.</p>
+				<p>Vergleich nationaler Daten ähnelt dem zwischen Äpfeln und Birnen.</p>
+				<p>Harmonisierte Daten nur für Europa, z.B. IMEM.</p>
+			</section>	
+
+			<section>		
+				<h2>Migrationsindikatoren für die Schweiz (2013)</h2>
+				<p>1) Einwanderung von Ausländern: 176.000 </p>
+				<p>2) Auswanderung von Ausländern: 77.000 </p>
+				<p>3) Wanderungssaldo: 89.000 (1,8% der Bevölkerung)</p>
+				<p>4) im Ausland geborene Bevölkerung: 1,35 Millionen (19% der Bevölkerung)</p>
+				<p>5) Bevölkerung mit Migrationshintergrund: 2,37 Millionen (35% der Bevölkerung)</p>
+				<p style="font-size:11px">Quelle: <a href="http://www.bfs.admin.ch/bfs/portal/de/index/themen/01/06.html" target="_blank">Statistisches Bundesamt</a></p>
+			</section>	
+
+			<section>		
+				<h2>Aber was bedeuten diese Zahlen?</h2>
+				<br>
+				<h3>Betrachtung im globalen Kontext notwendig!</h3>
+			</section>	
+
+			<section>		
+				<h2>Wie stark ist die globale Migration?</h2>
+				<p>Stock: etwa <font color="#ff7f00">3%</font> der Weltbevölkerung lebten 2010 in einem anderen Land als sie geboren wurden</p>
+				<br>
+				<p>Flow: <font color="#ff7f00">??%</font> der Weltbevölkerung sind zwischen 2005 und 2010 in ein anderes Land gezogen</p>
+			</section>	
+			
+			<section>
+				<h2><a href="http://www.sciencemag.org/content/343/6178/1520" target="_blank"> Quantifying Global International Migration Flows</a></h2>
+				<p>Guy Abel & Nikola Sander.<br>Veröffentlicht in <i>Science</i> am 28. März 2014; Vol 343: 1520-1522.</p> 
+				<br>
+				<img src="images/science.png"  width="300">
+			</section>			
+
+			<section>
+				<h2>Neues Modell für die Berechnung von Migrationsströmen</h2>
+				<table><tr>
+				<td>
+				<h3 style="text-decoration: underline">UNO Bestandsdaten</h3>
+				<p>Transitionen zwischen <br>Geburtsort und Wohnort</p>
+				<p>1990, 2000, 2010</p>
+				<p>~220 Länder</p></td>
+				<td><h2>&#10140; </h2></td>
+				<td style="padding-left:1.25em">
+				<h3 style="text-decoration: underline">Neue Schätzungen</h3>
+				<p>Transitionen zwischen <br>Wohnorten über 5 Jahre</p>
+				<p>1990-95 bis 2005-10</p>
+				<p>196 Länder</p></td>
+				</tr></table>
+			</section>				
+			
+			<section>
+				<h2>Globale Migration stabil bei 0,6 % der Weltbevölkerung</h2>
+				<img src="images/global-intensity.png"  width="700">
+			</section>			
+			
+			<section data-background="images/Table_big1.png" data-background-size="contain">	
+				<p style="text-align:center; vertical-align:middle"><font color="white">Tabelle nicht ideal zur Identifizierung von räumlichen Wanderungsmustern....</font></p>
+			</section>				
+
+			<section data-background="images/flowmap-adam.jpg" data-background-size="contain">	
+				<h3 style="text-align:center;vertical-align:bottom;color:#000;background-color:rgba(255, 255,255, 0.5)">Klassische Visualisierung von Migrationsströmen.</h3>
+			</section>	
+
+			<section data-background="images/circos.png" data-background-size="contain">	
+				<h3 style="text-align:center;vertical-align:middle;color:#000;background-color:rgba(255, 255,255, 0.7)">Genetik als Quelle der Inspiration</h3>
+			</section>				
+
+			<section data-background="images/Science_Fig4.jpg" data-background-size="contain">	
+				<h3 style="text-align:center; color:#000;background-color:rgba(255, 255,255, 0.5)">Circular <br> Migration Plot</h3>
+			</section>	
+
+			<section data-background="images/top50-2005-all.png" data-background-size="contain">	
+				<p style="text-align:center; vertical-align:middle"><font color="white">Wanderungen zwischen 50 Ländern<br> über den Zeitraum 2005-10</font></p>
+			</section>
+			
+			<section data-background="images/top50-2005-usa.png" data-background-size="contain">	
+				<p style="text-align:center; vertical-align:middle"><font color="white">2005-10</font></p>
+			</section>
+	
+			<section data-background="images/top50-2005-europe.png" data-background-size="contain">	
+				<p style="text-align:center; vertical-align:middle"><font color="white">2005-10</font></p>
+			</section>
+	
+			<section data-background="images/top50-2005-asia.png" data-background-size="contain">	
+				<p style="text-align:center; vertical-align:middle"><font color="white">2005-10</font></p>
+			</section>
+			
+			<section data-background="images/top50-1990-asia.png" data-background-size="contain">	
+				<p style="text-align:center; vertical-align:middle"><font color="white">1990-95</font></p>
+			</section>
+
+			<section data-background="images/top50-1990-all.png" data-background-size="contain">	
+				<p style="text-align:center; vertical-align:middle"><font color="white">1990-95</font></p>
+			</section>			
+
+			<section>		
+				<h3>Wanderungssaldo in % der Bevölkerung<br> 1950..........................bis..........................2010</h3>
+				<svg xmlns="http://www.w3.org/2000/svg" height="500" width="900"><g transform="translate(0,0)" title="Schweiz"><path d="M0,41.42535971223022L77,42.523381294964025L154,29.49685251798561L230.99999999999997,47.56429856115108L308,53.45368705035971L385,66.13084532374101L461.99999999999994,49.06160071942446L539,45.368255395683455L616,36.98336330935251L693,50.85836330935252L770,42.523381294964025L847,32.24190647482014L847,55.5L770,55.5L693,55.5L616,55.5L539,55.5L461.99999999999994,55.5L385,55.5L308,55.5L230.99999999999997,55.5L154,55.5L77,55.5L0,55.5Z" style="fill: rgb(191, 105, 105);" class="area"></path><text style="font-size: 18px; fill: rgb(255, 255, 255); font-family: Arial,Helvetica; text-anchor: end;" y="49.5" x="841">Schweiz</text></g><g transform="translate(0,63.5)" title="Österreich"><path d="M0,60.89028776978417L77,60.29136690647482L154,54.052607913669064L230.99999999999997,51.656924460431654L308,48.81205035971223L385,57.29676258992806L461.99999999999994,53.5535071942446L539,49.41097122302158L616,37.58228417266187L693,54.002697841726615L770,42.273830935251794L847,45.81744604316547L847,55.5L770,55.5L693,55.5L616,55.5L539,55.5L461.99999999999994,55.5L385,55.5L308,55.5L230.99999999999997,55.5L154,55.5L77,55.5L0,55.5Z" style="fill: rgb(191, 169, 105);" class="area"></path>
+				<text style="font-size: 18px; fill: rgb(255, 255, 255); font-family: Arial,Helvetica; text-anchor: end;" y="49.5" x="841">Österreich</text></g><g transform="translate(0,127)" title="Deutschland"><path d="M0,56.19874100719424L77,56.997302158273385L154,48.21312949640288L230.99999999999997,48.21312949640288L308,50.45908273381295L385,54.252248201438846L461.99999999999994,53.65332733812949L539,43.52158273381295L616,35.43615107913669L693,50.5089928057554L770,49.91007194244604L847,55.45008992805755L847,55.5L770,55.5L693,55.5L616,55.5L539,55.5L461.99999999999994,55.5L385,55.5L308,55.5L230.99999999999997,55.5L154,55.5L77,55.5L0,55.5Z" style="fill: rgb(148, 191, 105);" class="area"></path><text style="font-size: 18px; fill: rgb(255, 255, 255); font-family: Arial,Helvetica; text-anchor: end;" y="49.5" x="841">Deutschland</text></g><g transform="translate(0,190.5)" title="Luxembourg"><path d="M0,45.81744604316547L77,48.66232014388489L154,41.97437050359712L230.99999999999997,46.56609712230215L308,33.04046762589928L385,38.78012589928058L461.99999999999994,52.006294964028775L539,38.031474820143885L616,29.297212230215823L693,31.09397482014388L770,38.92985611510791L847,9.433003597122294L847,55.5L770,55.5L693,55.5L616,55.5L539,55.5L461.99999999999994,55.5L385,55.5L308,55.5L230.99999999999997,55.5L154,55.5L77,55.5L0,55.5Z" style="fill: rgb(105, 191, 126);" class="area"></path><text style="font-size: 18px; fill: rgb(255, 255, 255); font-family: Arial,Helvetica; text-anchor: end;" y="49.5" x="841">Luxembourg</text></g><g transform="translate(0,254)" title="USA"><path d="M0,52.3556654676259L77,50.05980215827338L154,52.95458633093525L230.99999999999997,51.756744604316545L308,48.76214028776978L385,46.71582733812949L461.99999999999994,47.614208633093526L539,47.41456834532374L616,46.76573741007194L693,39.728417266187044L770,46.16681654676259L847,46.76573741007194L847,55.5L770,55.5L693,55.5L616,55.5L539,55.5L461.99999999999994,55.5L385,55.5L308,55.5L230.99999999999997,55.5L154,55.5L77,55.5L0,55.5Z" style="fill: rgb(105, 191, 191);" class="area"></path><text style="font-size: 18px; fill: rgb(255, 255, 255); font-family: Arial,Helvetica; text-anchor: end;" y="49.5" x="841">USA</text></g><g transform="translate(0,317.5)" title="Kanada"><path d="M0,33.140287769784166L77,37.68210431654676L154,50.65872302158273L230.99999999999997,40.07778776978417L308,37.53237410071942L385,46.0669964028777L461.99999999999994,47.86375899280576L539,38.58048561151079L616,42.872751798561154L693,42.523381294964025L770,38.78012589928058L847,36.134892086330936L847,55.5L770,55.5L693,55.5L616,55.5L539,55.5L461.99999999999994,55.5L385,55.5L308,55.5L230.99999999999997,55.5L154,55.5L77,55.5L0,55.5Z" style="fill: rgb(105, 126, 191);" class="area"></path><text style="font-size: 18px; fill: rgb(255, 255, 255); font-family: Arial,Helvetica; text-anchor: end;" y="49.5" x="841">Kanada</text></g><g transform="translate(0,381)" title="Australien"><path d="M0,28.748201438848916L77,33.98875899280576L154,36.93345323741007L230.99999999999997,18.067446043165468L308,45.268435251798564L385,47.01528776978417L461.99999999999994,40.027877697841724L539,34.43794964028777L616,45.268435251798564L693,41.07598920863309L770,38.330935251798564L847,27.700089928057547L847,55.5L770,55.5L693,55.5L616,55.5L539,55.5L461.99999999999994,55.5L385,55.5L308,55.5L230.99999999999997,55.5L154,55.5L77,55.5L0,55.5Z" style="fill: rgb(148, 105, 191);" class="area"></path><text style="font-size: 18px; fill: rgb(255, 255, 255); font-family: Arial,Helvetica; text-anchor: end;" y="49.5" x="841">Australien</text></g><g transform="translate(0,444.5)" title="Singapur"><path d="M0,23.507643884892083L77,29.49685251798561L154,55.35026978417266L230.99999999999997,55.59982014388489L308,54.10251798561151L385,52.3556654676259L461.99999999999994,27.001348920863308L539,33.439748201438846L616,14.324190647482013L693,18.915917266187044L770,0L847,5.639838129496397L847,55.5L770,55.5L693,55.5L616,55.5L539,55.5L461.99999999999994,55.5L385,55.5L308,55.5L230.99999999999997,55.5L154,55.5L77,55.5L0,55.5Z" style="fill: rgb(191, 105, 169);" class="area"></path><text style="font-size: 18px; fill: rgb(255, 255, 255); font-family: Arial,Helvetica; text-anchor: end;" y="49.5" x="841">Singapur</text></g></svg>
+				<p style="font-size:11px">Quelle: <a href="http://esa.un.org/wpp/sources/country.aspx" target="_blank">Vereinte Nationen</a></p>
+			</section>	
+			
+			<section data-background="images/text-tabelle.jpg" data-background-size="contain">		
+			<h2>Wissenschaftskommunikation gewinnt an Bedeutung</h2>
+				<blockquote style="line-height: 1.3; font-size:44px">
+				“Scientists must learn to communicate with the public, be willing to do so and indeed consider it their duty to do so.”
+				</blockquote>
+				<p style="text-align:right">Royal Society, 1985</p>
+			</section>
+			
+			<section data-background="images/circular-world.png" data-background-size="contain">	
+				<h2 style="text-align:center; color:#F4EBCE;background-color:rgba(0, 0, 0, 0.7)"><a href="http://www.global-migration.info" target="_blank">"The Global Flow of People"</a></h2>
+				<p style="text-align:center; color:#F4EBCE;background-color:rgba(0, 0, 0, 0.7)">Idee, Design & Implementierung:<br> Nikola Sander and Ramon Bauer</p>
+				<br>
+				<p style="text-align:center; color:#F4EBCE;background-color:rgba(0, 0, 0, 0.7)">d3.js coding: Null2 Berlin</p>
+				<p style="text-align:center; color:#F4EBCE;background-color:rgba(0, 0, 0, 0.7)">Daten: Guy J Abel</p>
+				<p style="text-align:center; color:#F4EBCE;background-color:rgba(0, 0, 0, 0.7)">Web Design: Elvira Stein</p>
+				<p style="text-align:center; color:#F4EBCE;background-color:rgba(0, 0, 0, 0.7)">Finanzielle Unterstützung: Vienna Institute of Demography</p>
+			</section>	
+			
+			<section data-background="images/global-migration.png" data-background-size="contain">
+				<h3 style="color:#333;text-align:center; font-size: 110%; vertical-align:middle">Mehr als 0,5 Millionen Besucher seit März 2014</h3>
+			</section>			
+			
+			<!-- Interactive 	-->
+			<section style="width:800px">			
+			<div>
+					<nav role=navigation>
+					<div id="timeline"></div>
+					</nav>
+
+					<div id="diagram"></div>
+				</div>
+				  <script>
+					(function() {
+					  var help = d3.select('#help');
+					  help.on('click', function() {
+						var isActive = help.classed('active');
+						help
+						  .classed('active', !isActive)
+						  .transition()
+						  .style('width', isActive ? '30px' : '572px');
+					  });
+					  function helpOffset() {
+						var offset = Math.max((document.body.clientWidth - document.getElementById('container').clientWidth) / 2, 0);
+						help.style('right', offset + 'px');
+					  }
+					  d3.select(window).on('resize.help-resize', helpOffset);
+					  helpOffset();
+					})();
+				  </script>
+				  <script>
+					(function() {
+					  var datafile = 'd3/json/migrations.json';
+					  var aLittleBit = Math.PI / 100000;
+					  d3.json(datafile, function(data) {
+						var now = 2005;
+						var chart = Globalmigration.chart(data, {
+						  element: '#diagram',
+						  now: now,
+						  animationDuration: 1400,
+						  margin: 125,
+						  arcPadding: 0.04,
+						  layout: {
+							threshold: 50000,
+							labelThreshold: 5000,
+							colors: 'cd3d08 ec8f00 6dae29 683f92 b60275 2058a5 00a592 009d3c 378974 ffca00'.split(' ').map(function(c) { return '#' + c; })
+						  }
+						});
+						Globalmigration.timeline(chart, {
+						  now: now,
+						  element: '#timeline'
+						});
+						chart.draw(now);
+					  });
+					})();
+				  </script>
+				  <script>
+					(function() {
+					  function loadScript(d,s,l,id){
+						var js,
+						fjs=d.getElementsByTagName(s)[0],
+						p=/^http:/.test(d.location)?'http':'https';
+						if(!id || !d.getElementById(id)){
+						  js=d.createElement(s);
+						  js.id=id;
+						  js.src=p+'://' + l;
+						  fjs.parentNode.insertBefore(js,fjs);
+						}
+					  }
+					})();
+				  </script>
+			</section>			
+
+			<section>
+				<h2>Feedback via Twitter</h2>
+				<blockquote style="width: 80%; font-size:150%; line-height: 1.5">"Fantastic visualization of global migration data. I'm on there if you zoom in a lot."</blockquote>
+				<br>
+				<blockquote style="width: 80%; font-size:150% ;line-height: 1.5">"#SomeoneTellMarineLePen African migrants aren't invading us, and here's the data to prove it."</blockquote>
+			</section>			
+
+			<section data-background="images/schulbuch.jpg" data-background-size="contain">	
+				<p style="text-align:center; align:center; color:#000;background-color:rgba(255, 255,255, 0.8)">In den Lehrplan für die Sekundarstufe II <br>in Nordrhein-Westfalen aufgenommen.</p>
+			</section>
+			
+			<section>
+				<h2>Fazit</h2>
+				<p>Migration ist ein komplexes Phänomen das zunehmend an Bedeutung gewinnt</p>
+				<br>
+				<p>Erstmals gelingt die Bezifferung und Visualisierung globaler Migrationsströme</p>
+				<p>Globale Migration stabil bei 0,6 Prozent</p>
+				<br>
+				<p style="color:#ff7f00">Datenvisualisierung als Brücke zwischen Wissenschaft, Politik und Öffentlichkeit</p>
+			</section>
+			
+			<section data-background="images/deutschland-wanderung-2010.jpg" data-background-size="contain">
+				<br><br><br><br><br><br>
+				<div style="background-color:rgba(0, 0, 0, 0.2)">
+				<p style="text-align:center;"><b>Unser Code ist übertragbar <br>auf andere Datensätze<br> -> Binnenwanderung in Deutschland <br> im Jahr 2010</b></p>
+				<br><br><br><br><br><br><br><br>
+				<p style="text-align:right;font-size:100%">nikola.sander@oeaw.ac.at <br><a href="https://twitter.com/nikolasander" target="_blank"><font color="white">@nikolasander</font></a><br>
+				Slides: <a href="http://www.nikolasander.com/wda-forum2015" target="_blank">nikolasander.com/wda-forum2015</a></p>
+				</div>
+			</section>
+
+
+		<!-- END SLIDES -->		
+		</div>
+	</div>
+	
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.min.js"></script>
+
+	<script>
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: false,
+				history: false,
+				center: true,
+				slideNumber: true,
+				keyboard: true,
+				overview: true,
+				touch: true,
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+	</script>
+	</div>
+</body>
+</html>
